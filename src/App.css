@@ -325,21 +325,46 @@ input[type="text"] {
 
 /* Medium <= 992px */
   
-@media only screen and (min-width: 768px) {
+@media screen and (max-width: 992px) {
   .grid-container {
-    grid-template-columns: 260px 1fr;
-    grid-template-rows: auto;
-  }
-
-  .header-right {
-    display: block; /* Show right side of header on larger screens */
-  }
-
-  .menu-icon {
-    display: none; /* Hide menu icon on larger screens */
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      'header'
+      'main';
   }
 
   #sidebar {
-    left: 0; /* Show sidebar on larger screens */
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline;
+  }
+
+  .sidebar-title > span {
+    display: inline;
+  }
+}
+/* Small <= 768px */
+  
+@media screen and (max-width: 768px) {
+  .main-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+}
+
+/* Extra Small <= 576px */
+
+@media screen and (max-width: 576px) {
+  .hedaer-left {
+    display: none;
   }
 }
